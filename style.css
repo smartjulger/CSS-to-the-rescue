@@ -1,0 +1,54 @@
+
+body{
+    display: grid;
+    place-items: center;
+    gap: 10rem;
+    perspective: 800px;
+    section {
+        display: grid;
+        aspect-ratio: 1;
+        width: 10rem;
+        transform-style: preserve-3d;
+        animation: rotate 10s infinite linear;
+
+    }
+}
+
+
+side {
+    display: block;
+    aspect-ratio: 1;
+    grid-row: 1;
+    grid-column: 1;
+    background-color: red;
+    /* opacity: 0.6; */
+    /* filter: contrast(calc(sibling-index() * 20%)); */
+    &:nth-child(1){
+        transform: rotateX(-90deg) translateZ(5rem);
+    }
+    &:nth-child(2){
+        transform: rotateX(90deg) translateZ(5rem);
+    }
+    &:nth-child(3){
+        transform: rotateY(-90deg) translateZ(5rem);
+    }
+    &:nth-child(4){
+        transform: rotateY(90deg) translateZ(5rem);
+    }
+    &:nth-child(5){
+        transform: rotateZ(90deg) translateZ(5rem);
+        background-color: blue;
+    }
+    &:nth-child(6){
+        transform: rotateZ(-90deg) translateZ(-5rem);
+        background-color: green;
+    }
+}
+
+
+@keyframes rotate{
+    to {transform: rotatey(360deg);}
+}
+
+
+
